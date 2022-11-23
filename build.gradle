@@ -11,7 +11,9 @@ sonarqube {
         property "sonar.projectKey", "mickael-qobuz_sonarcloud"
         property "sonar.organization", "mickael-qobuz"
         property "sonar.host.url", "https://sonarcloud.io"
+        property "sonar.androidLint.reportPaths", "build/reports/lint-results.xml"
     }
 }
+
 
 // SONAR_TOKEN 8fc5b94591a4f279625657042a8391b324fbfb59
