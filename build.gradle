@@ -13,10 +13,12 @@ sonarqube {
         property "sonar.projectKey", "mickael-qobuz_sonarcloud"
         property "sonar.organization", "mickael-qobuz"
         property "sonar.host.url", "https://sonarcloud.io"
+        property "sonar.sourceEncoding", "UTF-8"
         property "sonar.profile", "Android Lint"
     }
     skipProject = true
 }
+
 subprojects {
     sonarqube {
         properties {
@@ -25,5 +27,8 @@ subprojects {
     }
 }
 
-// SONAR_TOKEN 8fc5b94591a4f279625657042a8391b324fbfb59
-// Login: 4210eeddebc8e296d8431c73c5d01977bca96050
+project(":module1") {
+    sonarqube {
+        skipProject = true
+    }
+}
