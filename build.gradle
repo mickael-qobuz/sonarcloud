@@ -26,9 +26,3 @@ subprojects {
         }
     }
 }
-
-project(":module1") {
-    sonarqube {
-        skipProject = true
-    }
-}
