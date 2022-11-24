@@ -10,6 +10,7 @@ plugins {
 
 subprojects {
     apply plugin: "org.sonarqube"
+
     sonarqube {
         properties {
             property "sonar.projectKey", "mickael-qobuz_sonarcloud"
