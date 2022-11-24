@@ -34,6 +34,13 @@ android {
         quiet true
         abortOnError false
         ignoreWarnings false
+        checkReleaseBuilds false
+    }
+}
+
+sonarqube {
+    properties {
+        property "sonar.androidLint.reportPaths", "build/reports/lint-results-debug.xml"
     }
 }
 

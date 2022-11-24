@@ -16,13 +16,4 @@ sonarqube {
         property "sonar.sourceEncoding", "UTF-8"
         property "sonar.profile", "Android Lint"
     }
-    skipProject = true
-}
-
-subprojects {
-    sonarqube {
-        properties {
-            property "sonar.androidLint.reportPaths", "build/reports/lint-results-debug.xml"
-        }
-    }
 }

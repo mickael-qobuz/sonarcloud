@@ -33,6 +33,7 @@ android {
         quiet true
         abortOnError false
         ignoreWarnings false
+        checkReleaseBuilds false
     }
 }
 
