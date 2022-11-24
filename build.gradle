@@ -5,20 +5,25 @@ plugins {
     id 'com.android.application' version '7.3.1' apply false
     id 'com.android.library' version '7.3.1' apply false
     id 'org.jetbrains.kotlin.android' version '1.7.20' apply false
-    id "org.sonarqube" version "3.5.0.2730" apply false
+    id "org.sonarqube" version "3.5.0.2730" apply true
 }
 
-subprojects {
-    apply plugin: "org.sonarqube"
+sonarqube {
+    properties {
+        property "sonar.projectKey", "mickael-qobuz_sonarcloud"
+        property "sonar.organization", "mickael-qobuz"
+        property "sonar.host.url", "https://sonarcloud.io"
+        property "sonar.sourceEncoding", "UTF-8"
+        property "sonar.profile", "Android Lint"
+        property "sonar.sources", "src/main"
+        property "sonar.tests", "src/test"
+        property "sonar.androidLint.reportPaths", "build/reports/lint-results-debug.xml"
+        skipProject = true
+    }
+}
 
+project(":module1") {
     sonarqube {
-        properties {
-            property "sonar.projectKey", "mickael-qobuz_sonarcloud"
-            property "sonar.organization", "mickael-qobuz"
-            property "sonar.host.url", "https://sonarcloud.io"
-            property "sonar.sourceEncoding", "UTF-8"
-            property "sonar.profile", "Android Lint"
-            property "sonar.androidLint.reportPaths", "build/reports/lint-results-debug.xml"
-        }
+        skipProject = true
     }
 }
