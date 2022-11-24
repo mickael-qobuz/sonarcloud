@@ -38,12 +38,6 @@ android {
     }
 }
 
-sonarqube {
-    properties {
-        property "sonar.androidLint.reportPaths", "build/reports/lint-results-debug.xml"
-    }
-}
-
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.7.0'
